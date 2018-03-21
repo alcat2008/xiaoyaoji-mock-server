@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1= title
+  p 接口列表
+  p 公共接口：
+  each val in publishServices
+    li
+      span #{val.value}
+      a(href= val.link) #{val.link}
+  each val, key in domainObject
+    p Domain: #{key}
+    each item in val
+      li
+        span #{item.value}
+        a(href= item.ActionName) #{item.ActionName}

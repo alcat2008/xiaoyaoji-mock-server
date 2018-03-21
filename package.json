@@ -1,0 +1,56 @@
+{
+  "name": "xiaoyaoji-mock-server",
+  "version": "0.0.1",
+  "main": "app.js",
+  "bin": {
+    "xiaoyaoji-mock-server": "./bin/index.js"
+  },
+  "files": [
+    "src",
+    "bin",
+    "app.js"
+  ],
+  "scripts": {
+    "start": "DEBUG=xiaoyaoji-mock-server:* node ./bin/index",
+    "lint": "eslint ./src",
+    "lint-fix": "eslint --fix ./src",
+    "pub": "npm publish"
+  },
+  "dependencies": {
+    "@koa/cors": "^2.2.1",
+    "ajv": "^6.3.0",
+    "body-parser": "~1.15.2",
+    "chalk": "^1.1.3",
+    "co": "^4.6.0",
+    "commander": "^2.9.0",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.1",
+    "debug": "~2.2.0",
+    "detect-port": "^1.0.7",
+    "express": "~4.14.0",
+    "jade": "~1.11.0",
+    "keymirror": "^0.1.1",
+    "koa": "^2.5.0",
+    "koa-body": "^2.5.0",
+    "koa-error": "^3.1.1",
+    "koa-logger": "^3.2.0",
+    "koa-router": "^7.4.0",
+    "less-middleware": "~2.2.0",
+    "lodash": "^4.17.2",
+    "mockjs": "^1.0.1-beta3",
+    "morgan": "~1.7.0",
+    "react-dev-utils": "^0.4.2",
+    "request": "^2.85.0",
+    "serve-favicon": "~2.3.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "eslint": "^3.12.0",
+    "eslint-config-airbnb-base": "^11.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "pre-commit": "^1.2.2"
+  },
+  "pre-commit": [
+    "lint"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "host": "http://xxx/",
+  "projectId": "xxx",
+  "token": "xxx",
+  "inject": {
+    "xxx": {
+      "code": 1,
+      "errmsg": "我是被注入的"
+    }
+  },
+  "dict": {
+    "xxx": ["1", "2"]
+  }
+}

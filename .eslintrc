@@ -1,0 +1,30 @@
+{
+  "root": true,
+  "extends": "airbnb-base",
+  "env": {
+    "node": true,
+    "es6": true,
+    "mocha": true
+  },
+  "rules": {
+    "arrow-parens": ["error", "as-needed"],
+    "arrow-body-style": ["warn", "as-needed", { "requireReturnForObjectLiteral": true }],
+    "comma-dangle": ["warn", "only-multiline"],
+    "global-require": ["warn"],
+    "func-names": ["off"],
+    "max-len": ["warn", 120, 2],
+    "new-cap": ["off", { "capIsNewExceptions": [ "Router" ] }],
+    "no-param-reassign": ["error", { "props": false }],
+    "no-trailing-spaces": ["error", { "skipBlankLines": true }],
+    "no-underscore-dangle": ["off", { "allowAfterThis": true }],
+    "no-unused-expressions": ["error", { "allowShortCircuit": true }],
+    "no-unused-vars": ["warn", { "vars": "all", "args": "none", "caughtErrors": "none" }],
+    "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+    "object-shorthand": ["warn"],
+    "padded-blocks": ["error", "never"],
+    "prefer-template": ["off"],
+    "class-methods-use-this": ["off"],
+    "quote-props": ["error", "consistent-as-needed", { "keywords": true }],
+    "semi": ["error", 'never'],
+  }
+}
