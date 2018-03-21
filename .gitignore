@@ -48,8 +48,8 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 
-# DSL directory
-.dsl
-
 # Output directory for npm
 lib
+
+## Project specified
+.idea/
