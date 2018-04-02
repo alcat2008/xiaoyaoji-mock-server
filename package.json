@@ -1,6 +1,6 @@
 {
   "name": "xiaoyaoji-mock-server",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "main": "app.js",
   "bin": {
     "xiaoyaoji-mock-server": "./bin/index.js"
@@ -14,7 +14,7 @@
     "start": "DEBUG=xiaoyaoji-mock-server:* node ./bin/index",
     "lint": "eslint ./src",
     "lint-fix": "eslint --fix ./src",
-    "pub": "npm publish"
+    "pub": "npm publish --registry=https://registry.npmjs.org"
   },
   "dependencies": {
     "@koa/cors": "^2.2.1",

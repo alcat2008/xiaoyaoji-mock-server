@@ -8,7 +8,7 @@ function getProjectData(url) {
   return new Promise((resolve, reject) => {
     request(url, (error, response, body) => {
       if (!error && response.statusCode === 200) {
-        debug(JSON.stringify(body))
+        // debug(JSON.stringify(body))
         resolve(body)
       } else {
         debug(JSON.stringify(error))
@@ -27,12 +27,15 @@ async function genRouter(profile) {
   debug('apiUrl: ' + apiUrl)
 
   const projectData = JSON.parse(await getProjectData(apiUrl))
-  debug('projectData: ' + projectData)
+  // debug('projectData: ' + projectData)
 
   projectData.data.modules.forEach(module => {
+    debug('******      ' + module.name + '      ****** Start')
     module.folders.forEach(folder => {
+      debug('   ###      ' + folder.name + '      ### Start')
       folder.children.forEach(child => {
-        const url = child.url.replace('$prefix$', '/api')
+        const url = child.url.replace('$prefix$', '/api').replace('/api/api', '/api')
+        debug('      ' + child.name + ' ===> ' + url)
         router.all(url, async (ctx, next) => {
           // ctx.router available
           // await next()
@@ -43,7 +46,9 @@ async function genRouter(profile) {
           }
         })
       })
+      debug('   ###      ' + folder.name + '      ### End')
     })
+    debug('******      ' + module.name + '      ****** End')
   })
 
   return router
