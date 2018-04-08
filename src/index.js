@@ -7,9 +7,9 @@ const error = require('koa-error')
 
 const { genRouter } = require('./service/router')
 
-async function initApp(port, profile) {
+async function initApp(port, profile, prefixs) {
   const app = new Koa()
-  const router = await genRouter(profile)
+  const router = await genRouter(profile, prefixs)
 
   app
     .use(logger())

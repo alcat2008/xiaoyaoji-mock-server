@@ -1,6 +1,6 @@
 {
   "name": "xiaoyaoji-mock-server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "app.js",
   "bin": {
     "xiaoyaoji-mock-server": "./bin/index.js"

@@ -75,26 +75,25 @@ function onListening(server) {
   // openBrowser('http://127.0.0.1:' + addr.port + '/');
 }
 
-function run(port, profile) {
+function run(port, profile, prefixs) {
   /**
    * Listen on provided port, on all network interfaces.
    */
 
-  initApp(port, profile)
+  initApp(port, profile, prefixs)
 }
 
 exports.start = function start(program) {
   // const port = normalizePort(process.env.PORT || '5000');
   const defaultPort = normalizePort((program && program.port) || 5000)
   const defaultProfile = program && program.file
-
-  console.log()
+  const defaultPrefixs = program && program.prefix && program.prefix.split(',')
 
 // We attempt to use the default port but if it is busy, we offer the user to
 // run on a different port. `detect()` Promise resolves to the next free port.
   detect(defaultPort).then(port => {
     if (port === defaultPort) {
-      run(port, defaultProfile)
+      run(port, defaultProfile, defaultPrefixs)
       return
     }
 
@@ -105,7 +104,7 @@ exports.start = function start(program) {
 
     prompt(question, true).then(shouldChangePort => {
       if (shouldChangePort) {
-        run(port, defaultProfile)
+        run(port, defaultProfile, defaultPrefixs)
       }
     })
   })

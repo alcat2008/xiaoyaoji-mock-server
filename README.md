@@ -82,6 +82,7 @@ $ xiaoyaoji-mock-server -h
     -V, --version        output the version number
     -f, --file <path>    specify path of profile, defaults to [./profile.json]
     -p, --port [number]  set server port, defaults to [5000]
+    -pf, --prefix [prefix]', 'prefix placeholder array, split by \',\'', defaults to ['$prefix$']
 ```
 
 #### port: Number

@@ -18,7 +18,7 @@ function getProjectData(url) {
   })
 }
 
-async function genRouter(profile) {
+async function genRouter(profile, prefixs) {
   const router = new Router()
 
   debug('profile: ' + profile)
@@ -34,7 +34,10 @@ async function genRouter(profile) {
     module.folders.forEach(folder => {
       debug('   ###      ' + folder.name + '      ### Start')
       folder.children.forEach(child => {
-        const url = child.url.replace('$prefix$', '/api').replace('/api/api', '/api')
+        const url = prefixs
+          .reduce((a, c) => a.replace(c, '/api'), child.url)
+          .replace('/api/api', '/api')
+
         debug('      ' + child.name + ' ===> ' + url)
         router.all(url, async (ctx, next) => {
           // ctx.router available
