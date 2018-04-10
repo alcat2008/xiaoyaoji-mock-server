@@ -69,7 +69,7 @@ function onListening(server) {
 
   clearConsole()
   console.log(chalk.cyan('Mock server is running on port [', addr.port, ']'))
-  console.log(chalk.cyan('For further info, please visite http://127.0.0.1:' + addr.port + '/'))
+  console.log(chalk.cyan('For further info, please visit http://127.0.0.1:' + addr.port + '/'))
   console.log()
 
   // openBrowser('http://127.0.0.1:' + addr.port + '/');

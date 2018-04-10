@@ -25,6 +25,7 @@
     "prefer-template": ["off"],
     "class-methods-use-this": ["off"],
     "quote-props": ["error", "consistent-as-needed", { "keywords": true }],
-    "semi": ["error", 'never'],
+    "semi": ["error", "never"],
+    "no-console": ["off"],
   }
 }
