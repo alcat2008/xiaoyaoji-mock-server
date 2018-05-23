@@ -4,7 +4,7 @@ const path = require('path')
 const program = require('commander')
 const pkg = require('../package.json')
 
-const Mocker = require('../src/App.js')
+const Mocker = require('../lib/App.js')
 
 program
   .version(pkg.version)

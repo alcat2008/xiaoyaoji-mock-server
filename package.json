@@ -1,19 +1,18 @@
 {
   "name": "xiaoyaoji-mock-server",
-  "version": "0.1.3",
-  "main": "app.js",
+  "version": "1.0.0",
   "bin": {
     "xiaoyaoji-mock-server": "./bin/index.js"
   },
   "files": [
-    "src",
-    "bin",
-    "app.js"
+    "lib",
+    "bin"
   ],
   "scripts": {
-    "start": "DEBUG=xiaoyaoji-mock-server:* node ./bin/index",
-    "lint": "eslint ./src",
-    "lint-fix": "eslint --fix ./src",
+    "start": "node ./bin/index",
+    "build": "rimraf lib && babel src --out-dir lib --plugins=transform-object-rest-spread --compact=true",
+    "lint": "eslint src",
+    "lint-fix": "eslint --fix src",
     "pub": "npm publish --registry=https://registry.npmjs.org"
   },
   "dependencies": {
@@ -25,8 +24,6 @@
     "commander": "^2.9.0",
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.1",
-    "debug": "~2.2.0",
-    "detect-port": "^1.0.7",
     "express": "~4.14.0",
     "jade": "~1.11.0",
     "keymirror": "^0.1.1",
@@ -39,16 +36,18 @@
     "lodash": "^4.17.2",
     "mockjs": "^1.0.1-beta3",
     "morgan": "~1.7.0",
-    "react-dev-utils": "^0.4.2",
+    "react-dev-utils": "^5.0.1",
     "request": "^2.85.0",
     "serve-favicon": "~2.3.0"
   },
   "devDependencies": {
     "babel-cli": "^6.22.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "eslint": "^3.12.0",
     "eslint-config-airbnb-base": "^11.0.0",
     "eslint-plugin-import": "^2.2.0",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "rimraf": "^2.6.2"
   },
   "pre-commit": [
     "lint"
